@@ -1,4 +1,4 @@
-import React, { useReducer } from "react"
+import React, { useContext, useReducer } from "react"
 
 
 /////////
@@ -34,12 +34,18 @@ const AppContext = React.createContext(null)
 //App State Component
 /////
 
-const Appstate = (props) =>{
+export const AppState = (props) =>{
 
-    const[state, dispatch] = useReducer(reducer, initialState)
+    const[ state, dispatch] = useReducer(reducer, initialState)
 
-    return <AppContext.Provider>
+    return <AppContext.Provider value ={{ state, dispatch}}>{props.children}</AppContext.Provider>;
+};
 
-    </AppContext.Provider>
 
+//hook- useAppState
+
+ export const useAppState = ()=>{
+    return React.useContext(AppContext)
 }
+
+
