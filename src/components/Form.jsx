@@ -10,7 +10,7 @@ const Form = (props) => {
 
   const actions  = {
     new: () => {
-      return fetch(state.url + "/cars",{
+      return fetch(state.url + "/cars/",{
         method: "post",
         headers:{
           "Content-Type" : "application/json",

@@ -27,13 +27,13 @@ const Dashboard = (props) => {
   const loaded = () => {
     return <div>
     <h1>{username}'s Garage</h1>
-     <Link to="/dashboard/new"><button>Add Car </button></Link>
-    <Route path="/dashboard/:action" render={(rp) => <Form {...rp} getCarInfo ={getCarInfo}/>}/> 
+        <Link to="/dashboard/new"><button>Add a car</button></Link>
+        <Route path="/dashboard/:action" render={(rp) => <Form {...rp} getCarInfo={getCarInfo}/>}/>
      <ul>
     {cars.map(car => (
-            <div>
+            <div className="car" key={car.id}>
                 <h2>{car.image}</h2>
-                <h2>{car.model}</h2> */}
+                <h2>{car.model}</h2> 
                     <button onClick={() => {
                         dispatch({type: "select", payload: car})
                         props.history.push("/dashboard/edit")

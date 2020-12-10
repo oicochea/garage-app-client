@@ -20,15 +20,15 @@ export const App = (props) => {
     }
   }, [])
 
-  return(
-  <>
+  return <>
   <Route path = "/" component={Nav}/>
   <Switch>
     <Route exact path = "/" component={Home}/>
     <Route exact path = "/auth/:form" component={Auth}/>
     <Route exact path = "/dashboard" component={Dashboard}/>
+    <Route path="/dashboard/:action" component = { Dashboard }/>
   </Switch>
-  </>);
+  </>;
   
 };
 
