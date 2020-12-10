@@ -8,16 +8,17 @@ import {useAppState} from "../AppState.jsx"
 
 export const App = (props) => {
 
+
   const {state, dispatch} = useAppState()
-  React.useState(()=>{
+  React.useState(() => {
     const auth = JSON.parse(window.localStorage.getItem("auth"))
     if (auth){
-      dispatch({type: "auth", payload: "auth"})
+      dispatch({type: "auth", payload: auth})
       props.history.push("/dashboard")
-    }else{
-      window.location.push("/")
+    } else {
+      props.history.push("/")
     }
-  },[])
+  }, [])
 
   return(
   <>

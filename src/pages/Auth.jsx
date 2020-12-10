@@ -1,27 +1,28 @@
-import React from "react";
-import {useAppState} from "../AppState.jsx"
-
+import React from "react"
+import { useAppState } from "../AppState.jsx"
 
 const Auth = (props) => {
 
-  const type = props.match.params.form;
-  const [formData, setFormData] = React.useState({
+const type = props.match.params.form
+const [formData, setFormData] = React.useState({
     username: "",
-    password: "",
-  });
- const [userData, setUserData]= React.useState(null);
-  const{state, dispatch} = useAppState()
+    password: ""
+});
+const [userData, setUserData] = React.useState(null)
+const { state, dispatch } = useAppState()
 
- React.useEffect(()=>{
-   if(userData){
-     const{token, user} = userData;
-     dispatch({type: "auth", payload:{token, username: user.username}});
-     window.localStorage.setItem ("auth" , JSON.stringify ({token, username: user.username}))
-     props.history.push("/dashboard")
-   }
-   }, [userData]);
-
-  const action = {
+React.useEffect(() => {
+    if (userData) {
+        console.log(userData)
+        const { token, user } =userData;
+        dispatch({ type: "auth", payload: {token, username: user.username } });
+        window.localStorage.setItem(
+            "auth", 
+            JSON.stringify({ token, username: user.username }))
+        props.history.push("/dashboard")
+    }
+}, [userData]);
+  const actions = {
     signup: () => {
       return fetch(state.url + "/users",{
         method: "post",
@@ -48,7 +49,7 @@ const Auth = (props) => {
 
   const handleSubmit =(event)=>{
     event.preventDefault()
-    action[type]().then((data)=>{
+    actions[type]().then((data)=>{
       setUserData(data);
     })
   }

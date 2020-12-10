@@ -6,9 +6,27 @@ import React, { useContext, useReducer } from "react"
 ///////
 
 const initialState = {
-    url : "http://oc-garage-app-backend.herokuapp.com",
+    url : "https://oc-garage-app-backend.herokuapp.com",
     token: null,
-    username:null
+    username:null,
+    cars: null,
+    new:{
+        make:"",
+        model:"",
+        year: 0 ,
+        miles: 0,
+        services: "",
+        image:""
+    },
+    edit:{
+        id:0,
+        make:"",
+        model:"",
+        year: 0 ,
+        miles: 0,
+        services: "",
+        image:""
+    }
 }
 
 
@@ -17,7 +35,7 @@ const initialState = {
 //Reducer 
 //////
 //action = {type: 'action', payload (what we need)--}
-const reducer = (state,action) => {
+const reducer = (state, action) => {
 
     let newState;
     switch (action.type){
@@ -26,14 +44,22 @@ const reducer = (state,action) => {
         return newState;
         break;
         case "logout":
-        newState = {...state , token:null , usernmae:null}
+        newState = {...state , token:null , username:null}
         window.localStorage.removeItem("auth")
         return newState;
-        default:
-            return state;
         break
+        case "getCarInfo":
+            newState = {...state, cars: action.payload}
+            return newState;
+            case "select":
+                newState = {...state, edit: action.payload}
+                return newState;
+                break;
+            default:
+                return state;
+                break;
+        }
     }
-}
     // switch(action.type){
     //     case"signup":
     //     fetch(state.url + "/users/" , {
@@ -96,4 +122,4 @@ export const AppState = (props) =>{
     return React.useContext(AppContext)
 }
 
-
+ 
