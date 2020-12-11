@@ -33,7 +33,11 @@ const Dashboard = (props) => {
     {cars.map(car => (
             <div className="car" key={car.id}>
                 <h2>{car.image}</h2>
-                <h2>{car.model}</h2> 
+                <h3>{car.make}</h3> 
+                <h3>{car.model}</h3> 
+                <h3>{car.year}</h3> 
+                <h3>{car.miles}</h3> 
+                <h3>{car.serive}</h3> 
                     <button onClick={() => {
                         dispatch({type: "select", payload: car})
                         props.history.push("/dashboard/edit")

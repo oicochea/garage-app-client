@@ -5,7 +5,7 @@ import {useAppState} from "../AppState.jsx"
 const Nav = (props) => {
   const { state, dispatch} = useAppState()
   return <header>
-    <h1>App title</h1>
+    <div className="mainTitle">MyWebGarage</div>
     <nav>
     {!state.token ? (
             <>
