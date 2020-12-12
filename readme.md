@@ -1,17 +1,34 @@
-# SIMPLE REACT TEMPLATE
+# README
 
-#### Created by Alex Merced of AlexMercedCoder.com/devNursery.com
+# Project 4 - Virtual Garage
+working link - https://kind-brattain-53f73d.netlify.app/dashboard/
 
-This is a minimalistic webpack react build. Best for practicing react, doesn't have many of the testing and post-processing features other builds have. Although you can add webpack and babel plugins as you wish if you want to use this as a starting place for a more powerful build setup.
+A webApp that is a virtual Garage. Allows you to add vehicles, delete a vehicle and edit a vehicle.
+Each vehicle has a - Make, Model,Year, Miles, Image and Services Section. The this can be editable , the user is recommened to keep adding services and the date so maintain a log of the services the car has recieved.
 
-Make sure to remove the git repository
+The web uses a user database for the signup/create user with JWT token Authentication To create personalized garages. The backend has a one to many relationship table to allow users to have their own separate garage
 
-`sudo rm -r .git` from the root folder
 
-Otherwise...
+## Technolgies used
+React, JSON, One to Many Relationships, HTML, CSS,
+Router & Links
+encrypted passwords and JWT token authorization
+Netlify - Front end
+Heroku - Backend
 
-`npm run dev` to run dev server
-`npm run build` to build into build folder
 
-- sass is enabled, so feel free to use sass files
-# garage-app-client
+## Approach Taken
+Created the components that I wanted to use and created folder structure
+Created the Appstate to assure that data would be pulling from the fetch request
+Strcutured components and forms in barebones left CSS and Styling for the last day after making sure JSON data would be returned
+wanted image backgrounds to go as a closed garage to an opened garage when you log in
+
+## Difficulties
+JWT tokens,- Trial and error as this was the first time I had used JWT tokesn.
+Importing components and App state and knowing what I would have to destrcture and re use in the different components.
+
+ ## Future Improvements
+
+Better Displaying for the vehicle, and mobile ready, right now the webbAPp is only  browser ready , I would need to add meqia querys to efficently structure the sizing and placement
+
+   
