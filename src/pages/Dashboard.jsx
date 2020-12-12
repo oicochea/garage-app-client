@@ -25,19 +25,21 @@ const Dashboard = (props) => {
   React.useEffect(() => {getCarInfo()}, [])
 
   const loaded = () => {
-    return <div>
-    <h1>{username}'s Garage</h1>
+    return <div className="dashboardHome">
+    <div className="dashboardTitle">{username}'s Garage</div>
         <Link to="/dashboard/new"><button>Add a car</button></Link>
         <Route path="/dashboard/:action" render={(rp) => <Form {...rp} getCarInfo={getCarInfo}/>}/>
-     <ul>
+        <div className="collectionCars">
     {cars.map(car => (
-            <div className="car" key={car.id}>
-                <h2>{car.image}</h2>
-                <h3>{car.make}</h3> 
-                <h3>{car.model}</h3> 
-                <h3>{car.year}</h3> 
-                <h3>{car.miles}</h3> 
-                <h3>{car.serive}</h3> 
+            <div className="carEach" key={car.id}>
+                <img src={car.image} alt="" height="100px"></img>
+                <h4>{car.year}<br/> 
+                    {car.make}<br/> 
+                    {car.model}<br/> 
+                Miles: {car.miles}</h4> 
+                <div className="serviceContainer">
+                <p className="serviceText">Services:{car.services}</p> 
+                </div>
                     <button onClick={() => {
                         dispatch({type: "select", payload: car})
                         props.history.push("/dashboard/edit")
@@ -52,10 +54,10 @@ const Dashboard = (props) => {
                     }}>Delete</button> 
              </div>
         ))}
-    </ul> 
+    </div>
     </div>
 }
- 
+
  return cars ? loaded() : <h1>Loading...</h1>
 }
 

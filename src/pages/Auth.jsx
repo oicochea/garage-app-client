@@ -54,14 +54,17 @@ React.useEffect(() => {
     })
   }
 
-    return   (<div>
-        <form  onSubmit={handleSubmit}>
-          <input type="text" name="username" value={formData.username} onChange={handleChange}/>
-          <input type="password" name="password" value={formData.password} onChange={handleChange}/>
-          <input type="submit"  value={type}/>
+    return   (<div className="authMain">
+      <div className="authFormContent">
+      <form className="authForm"onSubmit={handleSubmit}>
+        <label for="Username">Username</label>
+          <input type="text" name="username" placeholder="Enter Username" value={formData.username} onChange={handleChange}/>
+          <label for="Password1">Password</label>
+          <input type="password" name="password" placeholder="Enter Password" value={formData.password} onChange={handleChange}/>
+        <button type="submit" classnName="authFormButton"  value={type}>{type}</button>
         </form>
         </div>
+        </div>
     )
-}
-
+    }
 export default Auth

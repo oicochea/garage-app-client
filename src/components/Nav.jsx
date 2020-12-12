@@ -5,13 +5,12 @@ import {useAppState} from "../AppState.jsx"
 const Nav = (props) => {
   const { state, dispatch} = useAppState()
   return <header>
-    <div className="mainTitle">MyWebGarage</div>
     <nav>
     {!state.token ? (
             <>
-            <Link to="/"><div>Home</div></Link>
-            <Link to="/auth/signup"><div>Signup</div></Link>
-            <Link to="/auth/login"><div>Login</div></Link>
+            <Link to="/" className="topLinks"><div>Home</div></Link>
+            <Link to="/auth/signup" className="topLinks"><div>Signup</div></Link>
+            <Link to="/auth/login" className="topLinks"><div>Login</div></Link>
             </>
         ) : null}
             {state.token ? <div onClick={() => {

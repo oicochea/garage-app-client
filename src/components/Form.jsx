@@ -44,15 +44,21 @@ const Form = (props) => {
   }
 
   return (
-      <div className="form">
-          <form onSubmit={handleSubmit}>
+      <div >
+          <form className="carForm" onSubmit={handleSubmit}>
+          <label for="make">Vehicle Make</label>
                 <input type ="text" name="make" value={formData.make} onChange={handleChange}></input>
+                <label for="model">Vehicle Model</label>
                 <input type ="text" name="model" value={formData.model} onChange={handleChange}></input>
+                <label for="year">Year</label>
                 <input type ="number" name="year" value={formData.year} onChange={handleChange}></input>
+                <label for="miles">Mileage</label>
                 <input type ="number" name="miles" value={formData.miles} onChange={handleChange}></input>
-                <input type ="text" name="service" value={formData.service} onChange={handleChange}></input>
+                <label for="service">Services</label>
+                <input type ="text" name="services" value={formData.services} onChange={handleChange}></input>
+                <label for="image">Image</label>
                 <input type ="text" name="image" value={formData.image} onChange={handleChange}></input>
-                <input type="submit" value={action}/>
+                <button className="carFormButton"type="submit" value={action}>{action}</button>
           </form>
       </div>
   )

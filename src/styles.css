@@ -1,16 +1,244 @@
-header{
+body{
+  margin-left: 0%;
+  margin-top: 0%;
+  height: 100%;
   width: 100%;
+}
+header{
+  padding: 20px;
+  background-color: black;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  text-decoration: none;
 
 }
 
 header .mainTitle{
-  margin-right: 80%;
+  color: white;
+  margin-right: 60%;
 }
-nav{
+nav {
+  height: 20px;
+  padding-right: 20px;
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  text-decoration: none;
+}
+
+.topLinks{
+  color: white;
+  text-decoration: none;
+  margin-left: 200px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  font-weight: 500;
+  margin-bottom: -10px;
+  
+}
+
+
+.topLinks:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: whitesmoke;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+.topLinks:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+a.topLinks
+{
+    position: relative;
+}
+
+.homeMain{
+  height: 1000px;
+  background-image: url("https://i.imgur.com/MLDUF5V.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.homeTitle{
+  margin-bottom: -100px;
+margin-left: 20px;
+  height: max-content;
+  width: fit-content;
+  padding: 15px;
+ padding-top: 70px;
+  color:white;
+    font-family: 'Open Sans';
+    font-weight: 500;
+  font-style: italic;
+  font-size: 40px;
+}
+
+.homeText{
+  margin-left: 20px;
+    height: max-content;
+    width: fit-content;
+    padding: 15px;
+   padding-top: 100px;
+    color:white;
+      font-family: 'Open Sans';
+      font-weight: 500;
+    font-style: italic;
+    font-size: 40px;
+
+}
+
+
+.carEach{
+  padding: 5px;
+  border-radius: 5px;
+  height: fit-content;
+  width: fit-content;
+  background-color: rgba(34, 49, 63, .7);
+  color: white;
+  font-family: 'Open Sans';
+  display: flex;
+  flex-direction: column;
+}
+.copyright{
+  padding-top: 700PX;
+  text-align: center;
+  color:white;
+    font-family: 'Open Sans';
+  font-style: italic;
+  /* font-size: 18px;  */
+
+}
+
+.authMain{
+  align-items: center;
+  background-image: url("https://i.imgur.com/KA962J6.jpg");
+  height: 1000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.authFormContent{
+  padding-top: 100px;
+}
+
+
+.dashboardTitle{
+  padding: 15px;
+ padding-top: 100px;
+  color:white;
+    font-family: 'Open Sans';
+    font-weight: 500;
+  font-style: italic;
+  font-size: 40px;
+
+}
+
+.dashboardHome{
+  text-align: center;
+
+}
+input{
+  font-family: 'Open Sans';
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+Button{
+  margin-top: 20px;
+  padding:10px;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: rgba(34, 49, 63, 1);
+  color:white;
+  font-family: 'Open Sans';
+}
+
+.authForm{
+  color: white;
+  font-family: 'Open Sans';
+  padding-top: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: rgba(34, 49, 63, 1); 
+  max-height: 700px;
+  max-width: 400px;
+  margin: auto;
+
+}
+
+.dashboardHome{
+  align-items: center;
+  background-image: url("https://i.imgur.com/qhrj4LD.jpg");
+  min-height: 1000px;
+  height: fit-content;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.carFormButton{
+  margin-top: 20px;
+  padding:10px;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: rgba(34, 49, 63, 1);
+  color:white;
+  font-family: 'Open Sans';
+
+}
+.carForm{
+  align-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: 'Open Sans';
+  padding-top: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: rgba(34, 49, 63, 1); 
+  max-height: 700px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.carImage{
+  height: 30px;
+}
+
+.serviceContainer{
+  margin: auto;
+  text-align: center;
+  width: 100px;
+  height: fit-content;
+}
+.serviceText{
+  max-height: fit-content;
+  word-wrap: break-word;
+}
+input{
+  text-align: center;
+  width: 70%;
+  margin: auto;
+}
+
+.collectionCars{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
 }
